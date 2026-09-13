@@ -157,6 +157,22 @@ DeepSeek 评分约 **¥0.05/天**（每天约评 100 篇论文的标题+摘要�
 **想确认 Secrets 是否都配置对了？**
 去 Actions → Daily Paper Digest → Run workflow 手动触发一次，比等第二天早上更快看到结果。
 
+## 致谢
+
+项目调研阶段参考了以下同类项目的设计思路（每日推送、配置化研究方向、本地存储、知识图谱等）：
+
+- [gpt_paper_assistant](https://github.com/tatsu-lab/gpt_paper_assistant)
+- [daily-arXiv-ai-enhanced](https://github.com/dw-dengwei/daily-arXiv-ai-enhanced)
+- [Aries](https://github.com/LAMDA-NeSy/Aries)
+- [zotero-arxiv-daily](https://github.com/TideDra/zotero-arxiv-daily)
+- [paperwise](https://github.com/HJCheng0602/paperwise)
+- [litgraph](https://github.com/kl-demi/litgraph)
+- [papersearch](https://github.com/dylansechet/papersearch)
+- [academic-paper-scraper](https://github.com/labrat-0/academic-paper-scraper)
+- [research-papers-mcp](https://pypi.org/project/research-papers-mcp/)
+
+本项目由 **Claude Sonnet 5** 协助设计与实现。
+
 ## License
 
 MIT License，见 [LICENSE](LICENSE)。
