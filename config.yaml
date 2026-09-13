@@ -1,0 +1,49 @@
+# ============================================================
+# 研究方向配置 — 改方向只需编辑此文件然后 push
+# ============================================================
+
+discovery:
+  # 用自然语言描述你的研究兴趣，LLM 据此评分。下面是示例，改成你自己的方向即可。
+  description: |
+    I research [你的研究领域，例如 large language models for code generation].
+    My focus is on [具体子方向，例如 retrieval-augmented generation for
+    repository-level code understanding]. I'm interested in:
+    - [兴趣点 1]
+    - [兴趣点 2]
+    - [兴趣点 3]
+
+  # arXiv 分类（每天从这些分类拉新论文），完整列表见 https://arxiv.org/category_taxonomy
+  arxiv_categories:
+    - cs.AI
+    - cs.LG
+    - cs.CL
+
+  # 关键词过滤（标题或摘要包含任一关键词的论文优先送 LLM 评分）
+  keywords:
+    - 关键词1
+    - 关键词2
+    - 关键词3
+
+  # 推送论文数量
+  top_k: 10
+
+  # 相关性评分阈值（1-10），低于此分的论文不推送
+  min_score: 5
+
+push:
+  channel: email
+  # 以下在 GitHub Secrets 中配置，不要写在这里
+  # SMTP_SERVER, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, TO_EMAIL
+
+llm:
+  provider: deepseek
+  model: deepseek-v4-pro
+  # DEEPSEEK_API_KEY 在 GitHub Secrets 中配置
+
+storage:
+  # 论文元数据存入 SQLite，每次运行自动追加
+  db_path: data/papers.db
+
+paperwise:
+  # 仅用于 star.py --download 的可选备份；精读的 PDF 由 paperwise 自行管理。
+  papers_dir: papers
