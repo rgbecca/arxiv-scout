@@ -8,7 +8,7 @@
 - 关键词预筛 + DeepSeek LLM 相关性评分（1-10 分）+ 一句话中文摘要
 - 识别论文是否已被顶会/顶刊确认接收（启发式，基于 arXiv 的 comment/journal_ref 字段）
 - 推送 Top N 到邮箱（简洁 HTML 格式）
-- 所有论文元数据自动存入 SQLite 数据库，按 arXiv ID 去重
+- 所有论文元数据自动存入 SQLite 数据库，按 arXiv ID 去重（Actions 会以 bot 身份每日自动 commit 更新这个数据库文件）
 - 收藏感兴趣的论文（`star.py`），可选联动 [paperwise](https://github.com/HJCheng0602/paperwise) 批量生成精读报告（`deepread.py`）
 - 改研究方向只需编辑 `config.yaml`
 
@@ -139,3 +139,7 @@ tests/                # 收藏/精读流程的离线单元测试
 ## 成本
 
 DeepSeek 评分约 **¥0.05/天**（每天约评 100 篇论文的标题+摘要）。GitHub Actions 对 public repo 完全免费。paperwise 精读一篇论文约 $0.005-0.01。
+
+## License
+
+MIT License，见 [LICENSE](LICENSE)。

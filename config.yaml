@@ -37,7 +37,8 @@ push:
 
 llm:
   provider: deepseek
-  model: deepseek-v4-pro
+  # 模型名请去 platform.deepseek.com 文档确认当前可用列表，deepseek-chat 是最稳定的默认别名
+  model: deepseek-chat
   # DEEPSEEK_API_KEY 在 GitHub Secrets 中配置
 
 storage:
