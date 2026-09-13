@@ -140,6 +140,23 @@ tests/                # 收藏/精读流程的离线单元测试
 
 DeepSeek 评分约 **¥0.05/天**（每天约评 100 篇论文的标题+摘要）。GitHub Actions 对 public repo 完全免费。paperwise 精读一篇论文约 $0.005-0.01。
 
+## 常见问题
+
+**Actions 显示绿勾但没收到邮件？**
+`SMTP_USER`/`SMTP_PASSWORD`/`TO_EMAIL` 任一没配置时，程序会跳过发送并在日志里打印警告，但整个 workflow 仍然算成功（不算报错）。去 Actions → 具体某次 run → 展开 "Run daily digest" 步骤看日志，搜 `[警告]` 关键字确认具体原因。
+
+**DeepSeek API 报错 model not found / invalid model？**
+说明 `config.yaml` 里 `llm.model` 填的名字在 DeepSeek 那边已经下线或改名了，去 [platform.deepseek.com](https://platform.deepseek.com) 文档页确认当前可用模型列表，改成正确的名字。
+
+**Gmail 一直登录失败？**
+必须用[应用专用密码](https://myaccount.google.com/apppasswords)，不是你的 Gmail 登录密码；且账号需要先开启两步验证才能生成应用专用密码。
+
+**当天没有推送、Actions 日志显示"今日无新论文"？**
+正常现象，arXiv 周末和部分节假日不更新，脚本会直接跳过退出。
+
+**想确认 Secrets 是否都配置对了？**
+去 Actions → Daily Paper Digest → Run workflow 手动触发一次，比等第二天早上更快看到结果。
+
 ## License
 
 MIT License，见 [LICENSE](LICENSE)。
